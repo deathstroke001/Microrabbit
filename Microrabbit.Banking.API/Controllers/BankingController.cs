@@ -13,11 +13,6 @@ namespace Microrabbit.Banking.API.Controllers
     public class BankingController : ControllerBase
     {
         private readonly IAccountRepository _accountRepository;
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<BankingController> _logger;
 
         public BankingController(ILogger<BankingController> logger,IAccountRepository accountRepository)
