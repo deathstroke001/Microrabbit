@@ -3,6 +3,7 @@ using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Banking.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MicroRabbit.Banking.Data.Repository
@@ -14,9 +15,10 @@ namespace MicroRabbit.Banking.Data.Repository
         {
             _ctx = ctx;       
         }
-        public IEnumerable<Account> GetAccounts()
+        public List<Account> GetAccounts()
         {
-            return _ctx.Accounts;
+            var response = _ctx.Accounts.ToList();
+            return response;
         }
     }
 }
